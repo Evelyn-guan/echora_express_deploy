@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Sky Blue",
+    "colorImage": "lightblue.svg"
+
+  },
+  {
+    "name": "Dark Blue",
+    "colorImage": "darkblue.svg"
+
+  },
+  {
+    "name": "Modern Purple",
+    "colorImage": "purple.svg"
+
+  },
+  {
+    "name": "Fire Red",
+    "colorImage": "red.svg"
+
+  },
+  {
+    "name": "Golden Yellow",
+    "colorImage": "yellow.svg"
+
+  },
+  {
+    "name": "Tangerine",
+    "colorImage": "orange.svg"
+
+  },
+  {
+    "name": "Brown",
+    "colorImage": "brown.svg"
+
+  },
+  {
+    "name": "Dark Brown",
+    "colorImage": "dark-brown.svg"
+
+  },
+  {
+    "name": "Marble White",
+    "colorImage": "white.svg"
+
+  },
+  {
+    "name": "Slate Gray",
+    "colorImage": "grey.svg"
+
+  },
+  {
+    "name": "Ebony",
+    "colorImage": "black.svg"
+
+  },
+  {
+    "name": "Forest Green",
+    "colorImage": "green.svg"
+
+  }
+]
