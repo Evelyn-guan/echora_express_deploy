@@ -6,12 +6,6 @@ const router = express.Router()
 // 得到所有商品資料
 // GET /api/products
 router.get('/', async (req, res) => {
-  // type決定是否取得資料
-  // type=data 需取得資料; type=count 不需取得資料
-  // const type = req.query.type || 'all'
-
-  // const page = Number(req.query.page) || 1
-  // const perPage = Number(req.query.perpage) || 8
 
   //搜尋參數
   const nameLike = req.query.name_like || ''
@@ -211,11 +205,11 @@ router.get('/comparison', async (req, res) => {
 })
 
 //得到可能會喜歡的產品資料
-// GET /api/products/maylike/:colorId
-router.get('/maylike/:colorId', async (req, res) => {
-  const { colorId } = req.params
+// GET /api/products/maylike/:colorId/:pid
+router.get('/maylike/:colorId/:pid', async (req, res) => {
+  const { colorId, pid } = req.params
   const colorIdNum = Number(colorId)
-  console.log(colorIdNum)
+  const productIdNum = Number(pid)
   try {
     if (!colorId) throw new Error('請提供color id')
 
@@ -233,9 +227,10 @@ router.get('/maylike/:colorId', async (req, res) => {
     JOIN image ON product_sku.id = image.product_sku_id
     WHERE image.sort_order = 1
     AND color.id = ?
+    AND product.id != ?
     LIMIT 8`
 
-    const [rows] = await db.query(sql, [colorIdNum])
+    const [rows] = await db.query(sql, [colorIdNum, productIdNum])
 
     res.status(200).json({
       status: 'success',
